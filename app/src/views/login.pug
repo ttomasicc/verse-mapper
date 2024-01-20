@@ -1,0 +1,19 @@
+extends base
+
+block append head
+  script(src='/js/login.js' defer)
+
+block content
+    h2 Log into your account
+    form#frmLogin
+        label(for='email') Email address
+        input#email(type='email' name='email' placeholder='Email address' required)
+        small We'll never share your email with anyone else.
+
+        label(for='password') Password
+        input#password(type='password' name='password' placeholder='••••••••' required minlength='8')
+
+        button(type='submit') Login
+    p#errMess(style='visibility: hidden; text-align: center; color: darkred; margin: 20px 0;') Error message here
+    p(style='text-align: center; margin: 30px 0;') Don't have an account?&nbsp;
+        a(href='/signup') Sign up here!

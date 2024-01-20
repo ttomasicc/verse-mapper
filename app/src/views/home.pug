@@ -1,0 +1,43 @@
+extends base
+
+block append head
+    script(src='/js/home.js' defer)
+    script(src='/js/locationsMap.js' defer)
+
+block content
+    include _nav
+
+    div#searchTab
+        h1(style='margin: auto; margin-bottom: 18px;') Search tracks
+        input(type='search' placeholder='Search tracks...')
+
+        hr
+
+        div#results
+            p(style='margin: 40px 0;') It's empty in here...
+
+    div#lyricsTab(style='display: none')
+        a.bi.bi-arrow-left#btnBack(href='#' style='text-decoration: none; padding-top: 6px;') &nbsp; Back
+        br
+        br
+        div.grid
+            div
+                h1 Lyrics
+                div
+                    img#imgAlbum(width=300 height=300 style='border-radius: 1%;')
+                    br
+                    br
+                    p(style='margin-bottom: 0;')
+                        strong#trackName
+                    p#trackAuthors
+                #lyrics
+
+            div
+                h1 Locations
+                p Identified locations:&nbsp;
+                    span
+                        strong#nmofLocations 0
+                #map(style='height: 300px; border-radius: 2%;')
+        br
+        div
+            button.bi.bi-bookmark-heart#btnFavorite(type='button') &nbsp; Add to favorites

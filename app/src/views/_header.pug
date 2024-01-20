@@ -1,0 +1,18 @@
+header
+  nav
+    ul
+      li
+        h1
+          i.bi.bi-sun#themeSwitch(style="font-size: 24px; color: #f39c12; cursor: pointer;")
+    ul
+      li
+        h1
+          a(href='/') Verse Mapper
+    ul
+      li
+        h1
+          if user
+            i.bi.bi-escape#btnLogout(style="font-size: 24px; cursor: pointer;")
+          else
+            a(href='/login')
+              i.bi.bi-box-arrow-right#btnLogin(style="font-size: 24px; cursor: pointer;")

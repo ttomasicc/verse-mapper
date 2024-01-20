@@ -1,0 +1,27 @@
+extends base
+
+block append head
+    script(src='/js/statistics.js' defer)
+    script(src='/js/chart.umd.js')
+    script(src='/js/locationsMap.js' defer)
+
+block content
+    include _nav
+
+    h1 Statistics
+
+    h4 Your tracks mostly talk about places from these countries
+    canvas#chartCountry(width='auto' height=100)
+
+    br
+    br
+    hr
+    br
+
+    h4 Nearby track places
+    label(for='inRadius') Radius: &nbsp;
+        strong#inRadiusValue 750
+        | &nbsp; (km)
+        input#inRadius(type='range' min='10' max='1500' value='750')
+    button#btnNearby() Search nearby places
+    #map(style='height: 70vh; border-radius: 1%;')

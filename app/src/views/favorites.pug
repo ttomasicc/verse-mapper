@@ -1,0 +1,13 @@
+extends base
+
+block append head
+    script(src='/js/favorites.js' defer)
+    script(src='/js/locationsMap.js' defer)
+
+block content
+    include _nav
+
+    h1 Favorite tracks
+    #results
+    #map(style='height: 70vh; border-radius: 1%;')
+    #placeHolder

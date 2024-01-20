@@ -1,0 +1,22 @@
+extends base
+
+block append head
+    script(src='/js/signup.js' defer)
+
+block content
+    h2 Create account
+    form#frmSignup
+        label(for='name') Name
+        input#name(type='text' name='name' placeholder='Name' required maxlength='70')
+
+        label(for='email') Email address
+        input#email(type='email' name='email' placeholder='Email address' required maxlength='70')
+        small We'll never share your email with anyone else.
+
+        label(for='password') Password
+        input#password(type='password' name='password' placeholder='••••••••' required minlength='8')
+
+        button(type='submit') Sign up
+    p#errMess(style='visibility: hidden; text-align: center; color: darkred; margin: 20px 0;') Error message here
+    p(style='text-align: center; margin: 30px 0;') Already have an account?&nbsp;
+        a(href='/login') Login here!
